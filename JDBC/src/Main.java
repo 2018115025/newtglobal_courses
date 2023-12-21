@@ -15,11 +15,11 @@ public class Main {
         String password="Dhanush@20";
         Connection c=DriverManager.getConnection(url,username,password);
         System.out.println(c);
-        PreparedStatement p= c.prepareStatement("insert into student values (?,?)");
-        p.setInt(1,3);
-        p.setString(2,"ramki");
-        p.executeUpdate();
+//        PreparedStatement p= c.prepareStatement("insert into student values (?,?)");
+//        p.setInt(1,3);
+//        p.setString(2,"ramki");
+//        p.executeUpdate();
 //        c.close();
-        getAlldetails(c);
+//        getAlldetails(c);
     }
 }
