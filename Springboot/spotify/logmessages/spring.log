@@ -1,42 +1,33 @@
-2023-12-26T17:13:57.679+05:30  INFO 6972 --- [restartedMain] com.masai.SpotifyApplication             : Starting SpotifyApplication using Java 17.0.7 with PID 6972 (D:\Masai Repository\dhanushpriyan_v_fp08_103\unit-6-A\sprint-3\evaluation\spotify\target\classes started by Dhanush in D:\Masai Repository\dhanushpriyan_v_fp08_103\unit-6-A\sprint-3\evaluation\spotify)
-2023-12-26T17:13:57.727+05:30  INFO 6972 --- [restartedMain] com.masai.SpotifyApplication             : No active profile set, falling back to 1 default profile: "default"
-2023-12-26T17:13:57.958+05:30  INFO 6972 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2023-12-26T17:13:57.967+05:30  INFO 6972 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2023-12-26T17:13:59.256+05:30  INFO 6972 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-12-26T17:13:59.381+05:30  INFO 6972 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 73 ms. Found 5 JPA repository interfaces.
-2023-12-26T17:14:00.001+05:30  INFO 6972 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
-2023-12-26T17:14:00.013+05:30  INFO 6972 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-12-26T17:14:00.016+05:30  INFO 6972 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
-2023-12-26T17:14:00.164+05:30  INFO 6972 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-12-26T17:14:00.165+05:30  INFO 6972 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2194 ms
-2023-12-26T17:14:00.427+05:30  INFO 6972 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-12-26T17:14:00.498+05:30  INFO 6972 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.2.Final
-2023-12-26T17:14:00.502+05:30  INFO 6972 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2023-12-26T17:14:00.679+05:30  INFO 6972 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-12-26T17:14:00.827+05:30  INFO 6972 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2023-12-26T17:14:00.850+05:30  INFO 6972 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-12-26T17:14:01.419+05:30  INFO 6972 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@130e9e78
-2023-12-26T17:14:01.421+05:30  INFO 6972 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-12-26T17:14:01.552+05:30  INFO 6972 --- [restartedMain] org.hibernate.orm.dialect                : HHH035001: Using dialect: org.hibernate.dialect.MySQLDialect, version: 8.0.28
-2023-12-26T17:14:01.861+05:30  INFO 6972 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-12-26T17:14:02.660+05:30  INFO 6972 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-12-26T17:14:02.917+05:30  INFO 6972 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-12-26T17:14:03.233+05:30  INFO 6972 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2023-12-26T17:14:03.704+05:30  WARN 6972 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-12-26T17:14:04.638+05:30  INFO 6972 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2023-12-26T17:14:04.768+05:30  INFO 6972 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
-2023-12-26T17:14:04.804+05:30  INFO 6972 --- [restartedMain] com.masai.SpotifyApplication             : Started SpotifyApplication in 7.783 seconds (process running for 11.522)
-2023-12-26T17:14:34.584+05:30  INFO 6972 --- [http-nio-8888-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-12-26T17:14:34.586+05:30  INFO 6972 --- [http-nio-8888-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-12-26T17:14:34.591+05:30  INFO 6972 --- [http-nio-8888-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
-2023-12-26T17:14:36.557+05:30  INFO 6972 --- [http-nio-8888-exec-9] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 1062 ms
-2023-12-26T17:16:44.640+05:30  INFO 6972 --- [http-nio-8888-exec-4] com.masai.service.SpotifyServiceImpl     : user playlist history started
-2023-12-26T17:17:12.743+05:30  INFO 6972 --- [http-nio-8888-exec-8] com.masai.service.SpotifyServiceImpl     : user playlist history started
-2023-12-26T17:17:48.670+05:30  INFO 6972 --- [http-nio-8888-exec-9] com.masai.service.SpotifyServiceImpl     : add user started
-2023-12-26T17:18:01.797+05:30  INFO 6972 --- [http-nio-8888-exec-10] com.masai.service.SpotifyServiceImpl     : user playlist history started
-2023-12-26T17:20:21.893+05:30  INFO 6972 --- [RMI TCP Connection(16)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2023-12-26T17:20:22.034+05:30  INFO 6972 --- [RMI TCP Connection(16)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2023-12-26T17:20:22.059+05:30  INFO 6972 --- [RMI TCP Connection(16)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
-2023-12-26T17:20:22.203+05:30  INFO 6972 --- [RMI TCP Connection(16)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-12-26T17:20:22.299+05:30  INFO 6972 --- [RMI TCP Connection(16)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-12-26T17:20:22.431+05:30  INFO 6972 --- [RMI TCP Connection(16)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-12-27T01:21:15.525+05:30  INFO 7724 --- [restartedMain] com.masai.SpotifyApplication             : Starting SpotifyApplication using Java 17.0.7 with PID 7724 (D:\newtglobal\newtglobal_courses\Springboot\spotify\target\classes started by Dhanush in D:\newtglobal\newtglobal_courses\Springboot\spotify)
+2023-12-27T01:21:15.534+05:30  INFO 7724 --- [restartedMain] com.masai.SpotifyApplication             : No active profile set, falling back to 1 default profile: "default"
+2023-12-27T01:21:15.661+05:30  INFO 7724 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-12-27T01:21:15.662+05:30  INFO 7724 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-12-27T01:21:17.329+05:30  INFO 7724 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-27T01:21:17.416+05:30  INFO 7724 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 76 ms. Found 5 JPA repository interfaces.
+2023-12-27T01:21:18.168+05:30  INFO 7724 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2023-12-27T01:21:18.184+05:30  INFO 7724 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-27T01:21:18.185+05:30  INFO 7724 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-12-27T01:21:18.281+05:30  INFO 7724 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-27T01:21:18.281+05:30  INFO 7724 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2613 ms
+2023-12-27T01:21:18.465+05:30  INFO 7724 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-27T01:21:18.894+05:30  INFO 7724 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.2.Final
+2023-12-27T01:21:18.900+05:30  INFO 7724 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-12-27T01:21:19.327+05:30  INFO 7724 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-12-27T01:21:19.854+05:30  INFO 7724 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-27T01:21:19.886+05:30  INFO 7724 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-12-27T01:21:20.537+05:30  INFO 7724 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2db0251b
+2023-12-27T01:21:20.541+05:30  INFO 7724 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-12-27T01:21:20.720+05:30  INFO 7724 --- [restartedMain] org.hibernate.orm.dialect                : HHH035001: Using dialect: org.hibernate.dialect.MySQLDialect, version: 8.0.28
+2023-12-27T01:21:21.499+05:30  INFO 7724 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-12-27T01:21:22.950+05:30  INFO 7724 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-27T01:21:23.366+05:30  INFO 7724 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-27T01:21:23.831+05:30  INFO 7724 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2023-12-27T01:21:24.265+05:30  WARN 7724 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-27T01:21:25.103+05:30  INFO 7724 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-12-27T01:21:25.183+05:30  INFO 7724 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2023-12-27T01:21:25.208+05:30  INFO 7724 --- [restartedMain] com.masai.SpotifyApplication             : Started SpotifyApplication in 10.82 seconds (process running for 13.778)
+2023-12-27T01:21:36.927+05:30  INFO 7724 --- [RMI TCP Connection(8)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-12-27T01:21:36.958+05:30  INFO 7724 --- [RMI TCP Connection(8)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-12-27T01:21:36.976+05:30  INFO 7724 --- [RMI TCP Connection(8)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-27T01:21:36.981+05:30  INFO 7724 --- [RMI TCP Connection(8)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-12-27T01:21:36.995+05:30  INFO 7724 --- [RMI TCP Connection(8)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
