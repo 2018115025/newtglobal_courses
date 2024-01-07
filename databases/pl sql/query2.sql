@@ -66,3 +66,61 @@ $$
 -- \dt list all the tables
 -- \l listv all databases
 -- \d tb_name <=desc table
+
+-- triggers
+create table t_temprature(
+	t_id serial primary key,
+	temprature integer,
+	timing timestamp
+)
+
+-- create funtion for trigger
+create or replace function fn_temp()
+returns trigger 
+LANGUAGE plpgsql
+as
+$$
+-- if temprature< -10 them temprature=0;
+	begin
+		if new.temprature<10 then
+		  new.temprature=0;
+		end if;
+		return new;
+	end;
+$$
+
+-- create trigger
+create trigger tr_temp
+before insert
+on t_temprature
+for each row
+execute procedure fn_temp();
+
+insert into t_temprature (temprature,timing) values (20,now());
+insert into t_temprature (temprature,timing) values (-20,now());
+insert into t_temprature (temprature,timing) values (9,now());
+insert into t_temprature (temprature,timing) values (2,now());
+
+select * from t_temprature;
+
+-- cursor
+-- declare-open-fetch-close
+select * from orders order by name;
+-- list all orders using cursor
+do
+$$
+	declare
+		output_txt text;
+		rec record;
+		cur_allorders cursor
+		for 
+		select name from orders;
+	begin
+		open cur_allorders;
+		loop
+		fetch cur_allorders into rec;
+		output_txt:=output_txt ||','||rec.name;
+		end loop;
+		raise notice 'movies are %',output_txt;
+	end;
+$$
