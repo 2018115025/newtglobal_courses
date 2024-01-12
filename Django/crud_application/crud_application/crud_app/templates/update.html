@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update</title>
+</head>
+<body>
+    <h2>Update Data</h2>
+    <form method="post">
+        {% csrf_token %}
+        Select key to update: 
+        <select name="key">
+            {% for key in data.keys %}
+                <option value="{{ key }}">{{ key }}</option>
+            {% endfor %}
+        </select><br>
+        New value: <input type="text" name="value"><br>
+        <input type="submit" value="Update">
+    </form>
+</body>
+</html>

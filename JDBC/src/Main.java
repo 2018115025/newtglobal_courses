@@ -20,6 +20,6 @@ public class Main {
 //        p.setString(2,"ramki");
 //        p.executeUpdate();
 //        c.close();
-//        getAlldetails(c);
+        getAlldetails(c);
     }
 }

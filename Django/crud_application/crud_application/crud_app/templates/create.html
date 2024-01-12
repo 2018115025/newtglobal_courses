@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create</title>
+</head>
+<body>
+    <h2>Create Data</h2>
+    <form method="post">
+        {% csrf_token %}
+        Name: <input type="text" name="name"><br>
+        Age: <input type="text" name="age"><br>
+        City: <input type="text" name="city"><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

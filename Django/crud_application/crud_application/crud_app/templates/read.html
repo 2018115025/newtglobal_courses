@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Read</title>
+</head>
+<body>
+    <h2>Read Data</h2>
+    {% for key, value in data.items %}
+        <p><strong>{{ key }}:</strong> {{ value }}</p>
+    {% endfor %}
+    <a href="/update">Update</a> | <a href="/delete">Delete</a>
+</body>
+</html>
