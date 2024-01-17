@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Zesty Zomato Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <button><a class="home-button" href="{% url 'home' %}">Home</a></button>
+    <h1>Welcome to Zesty Zomato!</h1>
+
+    <h2>Menu:</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Dish Name</th>
+            <th>Price</th>
+            <th>Availability</th>
+        </tr>
+        {% for dish_id, dish_info in menu.items %}
+            <tr>
+                <td>{{ dish_id }}</td>
+                <td>{{ dish_info.name }}</td>
+                <td>${{ dish_info.price }}</td>
+                <td>{% if dish_info.available %}(Available){% else %}(Not Available){% endif %}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!-- zomato/templates/take_order.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Take Order</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        form {
+            width: 100%;
+        }
+        label, select, button {
+            display: block;
+            margin-bottom: 10px;
+        }
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: white;
+        }
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+        }
+        .checkbox-container input[type="checkbox"],
+        .checkbox-container label {
+            margin-bottom: 0;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        button a{
+            color: #ccc;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button><a class="home-button" href="{% url 'home' %}">Home</a></button>
+        <h1>Take a New Order</h1>
+        {% if message %}
+        <div class="alert">{{ message }}</div>
+        <script>
+            setTimeout(function () {
+                window.location.href = "{% url 'review_orders' %}";
+            }, 1000);
+        </script>
+        {% endif %}
+        <form method="post">
+            {% csrf_token %}
+            <label for="customer_name">Customer Name:</label>
+            <input type="text" id="customer_name" name="customer_name" required>
+            <label for="dish_ids">Select Dishes:</label>
+            {% for dish_id, dish_info in menu.items %}
+                <div class="checkbox-container">
+                    <input type="checkbox" id="dish_{{ dish_id }}" name="dish_ids" value="{{ dish_id }}">
+                    <label for="dish_{{ dish_id }}">{{ dish_info.name }} - ${{ dish_info.price }}</label>
+                </div>
+            {% endfor %}
+            <button type="submit">Take Order</button>
+        </form>
+    </div>
+</body>
+</html>

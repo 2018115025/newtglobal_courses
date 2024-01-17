@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Dish Availability</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        form {
+            width: 300px;
+            margin: 0 auto;
+        }
+        label, input, button {
+            display: block;
+            margin-bottom: 10px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        /* zomato/static/styles.css */
+
+        .home-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: auto; 
+    display: block; /* To take up full width */
+    width: fit-content; /* To adjust button width to content */
+}
+
+.home-button:hover {
+    background-color: #0056b3;
+}
+.update{
+    width: 40%;
+    margin: auto;
+    display: flex;
+    align-content: space-between;
+    justify-content: center;
+}
+
+    </style>
+</head>
+<body>
+    <div class="update">
+        <a class="home-button" href="{% url 'home' %}">Home</a>
+        <h1>Update Dish Availability</h1>
+    </div>
+    <br><br>
+    {% if message %}
+        <div class="alert">{{ message }}</div>
+        <script>
+            setTimeout(function () {
+                window.location.href = "{% url 'menu' %}";
+            }, 1000);
+        </script>
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        <label for="new_availability">New Availability:</label>
+        <input type="checkbox" id="new_availability" name="new_availability">
+        <button type="submit">Update Availability</button>
+    </form>
+</body>
+</html>

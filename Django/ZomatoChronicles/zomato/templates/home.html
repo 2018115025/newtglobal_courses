@@ -1,0 +1,205 @@
+<!-- zomato/templates/home.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Zomato Chronicles</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #d70f64;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .welcome {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .welcome h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+        .welcome p {
+            font-size: 18px;
+            margin-top: 5px;
+        }
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 0 10px;
+            background-color: #d70f64;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .cta-button:hover {
+            background-color: #ad0958;
+        }
+        /* Add this CSS to style the add dish form section */
+.add-dish-section {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #e1e1e1;
+    border-radius: 5px;
+}
+
+.add-dish-section form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.add-dish-section form input[type="text"],
+.add-dish-section form input[type="number"],
+.add-dish-section form input[type="checkbox"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #e1e1e1;
+    border-radius: 3px;
+}
+
+.add-dish-section form button {
+    background-color: #d70f64;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.add-dish-section form button:hover {
+    background-color: #ad0958;
+}
+    /* Add this CSS to style the update availability form section */
+.update-availability-section {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #e1e1e1;
+    border-radius: 5px;
+}
+
+.update-availability-section form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.update-availability-section form select,
+.update-availability-section form input[type="checkbox"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #e1e1e1;
+    border-radius: 3px;
+}
+
+.update-availability-section form button {
+    background-color: #d70f64;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.update-availability-section form button:hover {
+    background-color: #ad0958;
+}
+
+
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Zomato Chronicles</h1>
+    </div>
+    <div class="container">
+        <div class="welcome">
+            <h1>Welcome to Zomato Chronicles</h1>
+            <p>Experience the best culinary delights in town!</p>
+        </div>
+        <div class="cta-buttons">
+            <a href="{% url 'menu' %}" class="cta-button">View Menu</a>
+            <a href="{% url 'review_orders' %}" class="cta-button">Review Orders</a>
+        </div>
+
+    </div>
+    <!-- zomato/templates/home.html -->
+
+<!-- ... (existing content) -->
+
+    <div class="add-dish-section">
+        <h2>Add a Dish</h2>
+        <form id="add-dish-form" method="post" action="{% url 'add_dish' %}">
+            {% csrf_token %}
+            <label for="dish_name">Dish Name:</label>
+            <input type="text" id="dish_name" name="dish_name" required>
+            <label for="dish_price">Dish Price:</label>
+            <input type="number" id="dish_price" name="dish_price" step="0.01" required>
+            <label for="dish_available">Available:</label>
+            <input type="checkbox" id="dish_available" name="dish_available">
+            <button type="submit">Add Dish</button>
+        </form>
+    </div>
+
+    <!-- zomato/templates/home.html -->
+
+<!-- ... (existing content) -->
+
+<div class="update-availability-section">
+    <h2>Update Dish Availability</h2>
+    <form id="update-availability-form">
+        <label for="dish_id">Enter Dish ID:</label>
+        <input type="text" id="dish_id" name="dish_id" required>
+        <button type="button" onclick="updateAvailability()">Update Availability</button>
+    </form>
+</div>
+
+<script>
+    function updateAvailability() {
+        const dishId = document.getElementById('dish_id').value;
+        window.location.href = `/update_dish/${dishId}/`;
+    }
+</script>
+
+<h1>Take Order</h1>
+    <div style="width: 40%;margin: auto;">
+        <a  class="cta-button" href="{% url 'take_order' %}">Take Order</a>
+    </div>
+<br>
+<br>    
+<div class="update-availability-section">
+    <h2>Update Order Status</h2>
+    <form id="update-availability-form">
+        <label for="dish_id">Enter Order ID:</label>
+        <input type="text" id="order_id" name="order_id" required>
+        <button type="button" onclick="updateStatus()">Update Status</button>
+    </form>
+</div>
+<script>
+    function updateStatus() {
+        const orderid = document.getElementById('order_id').value;
+        window.location.href = `/update_order/${orderid}/`;
+    }
+</script>
+    <br><br>
+</body>
+</html>

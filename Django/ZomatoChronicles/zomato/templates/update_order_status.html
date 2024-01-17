@@ -1,0 +1,79 @@
+<!-- zomato/templates/update_order_status.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Order Status</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        form {
+            width: 100%;
+        }
+        label, select, button {
+            display: block;
+            margin-bottom: 10px;
+        }
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: white;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button><a class="home-button" href="{% url 'home' %}">Home</a></button>
+        <h1>Update Order Status</h1>
+        {% if message %}
+        <div class="alert">{{ message }}</div>
+        <script>
+            setTimeout(function () {
+                window.location.href = "{% url 'review_orders' %}";
+            }, 1000);
+        </script>
+        {% endif %}
+        <form method="post">
+            {% csrf_token %}
+            <label for="new_status">New Status:</label>
+            <select id="new_status" name="new_status">
+                <option value="received">Received</option>
+                <option value="preparing">Preparing</option>
+                <option value="ready_for_pickup">Ready for Pickup</option>
+                <option value="delivered">Delivered</option>
+            </select>
+            <button type="submit">Update Status</button>
+        </form>
+    </div>
+</body>
+</html>

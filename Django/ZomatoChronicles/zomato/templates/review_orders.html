@@ -1,0 +1,60 @@
+<!-- zomato/templates/review_orders.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Review Orders</title>
+    <style>
+        /* Your CSS styling here */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <button><a class="home-button" href="{% url 'home' %}">Home</a></button>
+    <h1>Review Orders</h1>
+    <table>
+        <tr>
+            <th>Order Number</th>
+            <th>Customer Name</th>
+            <th>Status</th>
+            <th>Total Price</th>
+        </tr>
+        {% for order in order_history %}
+            <tr>
+                <td>{{ order.id }}</td>
+                <td>{{ order.customer_name }}</td>
+                <td>{{ order.status }}</td>
+                <td>${{ order.total_price|floatformat:2 }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

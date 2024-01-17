@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+  
+  <context:component-scan base-package="com.masai"/>
+  
+  <bean id="ld" class="java.time.LocalDate" factory-method="parse">
+  <constructor-arg value="2021-10-21"></constructor-arg>
+  </bean>
+  <bean id="emp" class="com.masai.model.Employee">
+	  <constructor-arg value="1" />
+	  <constructor-arg ref="ld"/>
+  </bean>
+  <bean id="dep" class="com.masai.model.Department">
+	  <constructor-arg value="hr" />
+  </bean>
+  <bean id="demo" class="com.masai.service.Demo" init-method="myInit" destroy-method="destroy">
+	  <property name="map">
+		  <map>
+			  <entry key-ref="dep" value-ref="emp"/>
+		  </map>
+	  </property>
+	  <property name="empList">
+		  <list>
+			  <ref bean="emp"/>
+		  </list>
+	  </property>
+  </bean>
+ 
+  </beans>
+  
+  
+  
