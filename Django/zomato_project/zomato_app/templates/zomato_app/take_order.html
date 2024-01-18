@@ -1,0 +1,20 @@
+{% extends 'zomato_app/base.html' %}
+
+{% block content %}
+<div class="container">
+  <h1>Take a New Order</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.customer.label_tag }}<br>
+    {{ form.customer }}
+    <br><br>
+    <label for="selected_dishes">Select Dishes:</label><br>
+    {% for dish in form.selected_dishes %}
+      <input type="checkbox" name="selected_dishes" value="{{ dish.value }}" id="id_selected_dishes_{{ forloop.counter0 }}">
+      <label for="id_selected_dishes_{{ forloop.counter0 }}">{{ dish.choice_label }}</label><br>
+    {% endfor %}
+    <br>
+    <button type="submit" class="btn btn-success">Place Order</button>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menu Items</title>
+    <!-- Load your static CSS file -->
+    <link rel="stylesheet" type="text/css" href="{% static 'zomato_app/styles.css' %}">
+</head>
+<body>
+
+<h1>Menu Items</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Dish Name</th>
+      <th>Price ($)</th>
+      <th>Availability</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for menu_item in menu_items %}
+    <tr>
+      <td>{{ menu_item.dish_name }}</td>
+      <td>${{ menu_item.price }}</td>
+      <td>{% if menu_item.available %}Available{% else %}Not Available{% endif %}</td>
+      <td>
+        <a href="{% url 'edit_menu_item' menu_item.id %}" class="btn btn-primary">Edit</a>
+      </td>
+      <td>
+        <form action="{% url 'delete_menu_item' menu_item.id %}" method="post">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<a href="{% url 'add_menu_item' %}" class="btn btn-success">Add New Dish</a>
+
+</body>
+</html>

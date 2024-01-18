@@ -1,0 +1,13 @@
+{% extends 'zomato_app/base.html' %}
+
+{% block content %}
+<div class="container">
+  <h1>Update Dish Availability</h1>
+  <h3>{{ menu_item.dish_name }}</h3>
+  <p>Current Availability: {% if menu_item.available %}Available{% else %}Not Available{% endif %}</p>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-primary">Toggle Availability</button>
+  </form>
+</div>
+{% endblock %}

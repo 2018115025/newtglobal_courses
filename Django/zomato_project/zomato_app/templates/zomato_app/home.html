@@ -1,0 +1,12 @@
+{% extends 'zomato_app/base.html' %}
+
+{% block content %}
+<div class="container">
+  <h1>Welcome to Zesty Zomato!</h1>
+  <p>Delight your taste buds with our exquisite dishes.</p>
+  <div class="buttons">
+    <a href="{% url 'add_menu_item' %}" class="btn btn-primary">Add Dish</a>
+    <a href="{% url 'menu_list' %}" class="btn btn-secondary">View Menu</a>
+  </div>
+</div>
+{% endblock %}

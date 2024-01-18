@@ -1,0 +1,25 @@
+{% extends 'zomato_app/base.html' %}
+
+{% block content %}
+<div class="container">
+  <h1>Review Orders</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Order ID</th>
+        <th>Customer</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for order in orders %}
+      <tr>
+        <td>{{ order.pk }}</td>
+        <td>{{ order.customer }}</td>
+        <td>{{ order.get_status_display }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

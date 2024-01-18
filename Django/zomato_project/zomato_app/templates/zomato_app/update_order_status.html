@@ -1,0 +1,20 @@
+{% extends 'zomato_app/base.html' %}
+
+{% block content %}
+<div class="container">
+  <h1>Update Order Status</h1>
+  <h3>Order ID: {{ order.id }}</h3>
+  <p>Current Status: {{ order.status }}</p>
+  <form method="post">
+    {% csrf_token %}
+    <label for="new_status">Update Status:</label>
+    <select name="new_status">
+      <option value="received">Received</option>
+      <option value="preparing">Preparing</option>
+      <option value="ready">Ready for Pickup</option>
+      <option value="delivered">Delivered</option>
+    </select><br>
+    <button type="submit" class="btn btn-primary">Update Status</button>
+  </form>
+</div>
+{% endblock %}
